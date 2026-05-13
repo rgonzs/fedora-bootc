@@ -1,0 +1,8 @@
+name: build-new-image
+on:
+  dispatch:
+jobs:
+  build-base-image:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
