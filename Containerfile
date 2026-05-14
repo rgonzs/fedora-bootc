@@ -7,6 +7,6 @@ RUN --mount=type=bind,source=scripts,destination=/tmp/scripts \
     --mount=type=tmpfs,destination=/run \
     --mount=type=tmpfs,destination=/tmp \
     --mount=type=tmpfs,destination=/var/log \
-    /tmp/scripts.sh
+    /tmp/scripts/install.sh
 
 RUN bootc container lint
