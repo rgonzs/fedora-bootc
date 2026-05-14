@@ -7,7 +7,6 @@ RUN --mount=type=cache,destination=/var/cache/libdnf5 \
     --mount=type=tmpfs,destination=/var/log \
     <<EOF
 dnf5 install -y neovim
-dnf5 group install -y @virtualization
 EOF
 
 RUN bootc container lint
