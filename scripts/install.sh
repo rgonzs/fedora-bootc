@@ -1,6 +1,6 @@
 #! /bin/bash
 set -euox pipefail
-
+rmdir /opt && ln -s -T /var/opt /opt
 dnf5 install -y neovim
 dnf5 copr enable -y atim/starship
 dnf5 install -y starship

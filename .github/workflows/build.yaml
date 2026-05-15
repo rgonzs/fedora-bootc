@@ -2,8 +2,8 @@ name: build-new-image
 on:
   workflow_dispatch:
 env:
-  IMAGE_NAME: "${{ github.event.repository.name }}"  # output image name, usually same as repo name
-  IMAGE_REGISTRY: "ghcr.io/${{ github.repository_owner }}"  # do not edit
+  IMAGE_NAME: "${{ github.event.repository.name }}"
+  IMAGE_REGISTRY: "ghcr.io/${{ github.repository_owner }}"
   DEFAULT_TAG: "latest"
 jobs:
   build-base-image:
@@ -18,7 +18,7 @@ jobs:
         uses: ublue-os/remove-unwanted-software@695eb75bc387dbcd9685a8e72d23439d8686cba6
       - name: Build Image
         run: |
-          podman build --squash -t ${{ env.IMAGE_NAME }}:${{ env.DEFAULT_TAG }} .
+          podman build --squash -t ${{ env.IMAGE_REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.DEFAULT_TAG }} .
 #      - name: Build Image
 #        id: build_image
 #        uses: redhat-actions/buildah-build@7a95fa7ee0f02d552a32753e7414641a04307056 # v2
